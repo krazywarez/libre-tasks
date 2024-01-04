@@ -18,7 +18,8 @@ in Swift.
 ### Backlog
 
 - [ ] Notification reminders for upcoming tasks
-- [ ] Possibly a settings page for app themes, credits/licensing, etc.
+- [ ] Recurring reminders
+- [ ] Support for tags, priorities, groups, etc.
 
 ## Collaboration
 

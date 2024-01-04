@@ -12,6 +12,7 @@ struct ContentView: View {
     @State var newTask : String = ""
     @State private var query = ""
     @State var newTaskDate: Date = Date()
+    @State private var showingPopover = false
     
     var filteredTasks: [Task] {
         if query.isEmpty {
@@ -23,20 +24,6 @@ struct ContentView: View {
         }
     }
     
-    var addTaskBar: some View {
-        HStack {
-            VStack {
-                TextField("Add Task: ", text: self.$newTask)
-                DatePicker("Date: ", selection: $newTaskDate)
-                    .datePickerStyle(CompactDatePickerStyle())
-            }
-            Button(action: self.addNewTask, label: {
-                Text("Add New")
-            })
-        }
-        .padding()
-    }
-    
     func addNewTask() {
         taskStore.tasks.append(Task(
             id: String(taskStore.tasks.count + 1),
@@ -44,12 +31,12 @@ struct ContentView: View {
             taskDate: newTaskDate
         ))
         self.newTask = ""
+        self.showingPopover = false
     }
 
     var body: some View {
         NavigationView {
             VStack {
-                addTaskBar.padding()
                 List {
                     ForEach(filteredTasks) { task in
                         VStack(alignment: .leading) {
@@ -79,6 +66,35 @@ struct ContentView: View {
                 .toolbar {
                     ToolbarItemGroup(placement: .navigationBarTrailing) {
                         EditButton()
+                        Button {
+                            showingPopover = true
+                        } label: {
+                            Image(systemName: "square.and.pencil")
+                        }.popover(isPresented: $showingPopover) {
+                            HStack {
+                                Button {
+                                    showingPopover = false
+                                } label: {
+                                    Text("Close")
+                                }
+                                Spacer()
+                                Text("Add New Task")
+                                Spacer()
+                                Button(action: self.addNewTask, label: {
+                                    Text("Save")
+                                })
+                            }
+                            .padding()
+                            HStack {
+                                VStack {
+                                    TextField("Add Task: ", text: self.$newTask)
+                                    DatePicker("Scheduled: ", selection: $newTaskDate)
+                                        .datePickerStyle(CompactDatePickerStyle())
+                                }
+                            }
+                            .padding()
+                            Spacer()
+                        }
                     }
                 }
             }
