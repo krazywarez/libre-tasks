@@ -96,12 +96,21 @@ struct ContentView: View {
                             Spacer()
                             (Text("[#") + Text(task.taskPriority) + Text("]"))
                         }
-                        .swipeActions(edge: .trailing) {
+                        .swipeActions(edge: .leading) {
                             Button(role: .destructive) {
                                 print("\(task.taskItem) is being deleted.")
                             } label: {
                                 Label("Delete", systemImage: "trash")
                             }
+                        }
+                        .swipeActions(edge: .trailing) {
+                            Button() {
+                                print("\(task.taskItem) is being marked as complete.")
+                                // TODO: Add method to complete message in the DataStore & move to Archive list
+                            } label: {
+                                Label("Complete", systemImage: "checkmark")
+                            }
+                            .tint(.green)
                             Button() {
                                 print("\(task.taskItem) is being edited.")
                                 // TODO: Add method to edit message in the DataStore
