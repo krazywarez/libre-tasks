@@ -54,7 +54,6 @@ struct ContentView: View {
                     ForEach(filteredTasks) { task in
                         VStack(alignment: .leading) {
                             Text(task.taskItem)
-                            Spacer()
                             if (Date() > task.taskDate) {
                                 HStack {
                                     Text(task.taskDate, style: .date)
