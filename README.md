@@ -30,6 +30,10 @@ iOS reminders app for those who prefer open-source alternatives.
 
 ## Screenshots
 
-| Light Mode                                   | Dark Mode                                  |
-|----------------------------------------------|--------------------------------------------|
-| ![Light Mode](Screenshots/preview_light.png) | ![Dark Mode](Screenshots/preview_dark.png) |
+The task list:
+
+![Task List](Screenshots/tasks.jpeg)
+
+Creating a task:
+
+![Task Creation](Screenshots/new_task.jpeg)
