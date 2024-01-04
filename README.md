@@ -32,8 +32,8 @@ iOS reminders app for those who prefer open-source alternatives.
 
 The task list:
 
-![Task List](Screenshots/tasks.jpeg)
+![Task List](Screenshots/tasks.png)
 
 Creating a task:
 
-![Task Creation](Screenshots/new_task.jpeg)
+![Task Creation](Screenshots/new_task.png)
