@@ -27,4 +27,5 @@ iOS reminders app for those who prefer open-source alternatives.
 ## Screenshots
 
 | Task List                           | Task Creation                              |
+| ----------------------------------- | ------------------------------------------ |
 | ![Task List](Screenshots/tasks.png) | ![Task Creation](Screenshots/new_task.png) |
