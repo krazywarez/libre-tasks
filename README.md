@@ -1,9 +1,5 @@
 # LibreTasks
 
-**NOTICE:** LibreTasks (ios-tasks) is no longer under development and currently 
-holds a minimally-usable version of the app. This is the last update and will 
-not be maintained further.
-
 LibreTasks intended to be a simple open-source tasks app for iOS, written 
 in Swift.
 
@@ -30,10 +26,5 @@ iOS reminders app for those who prefer open-source alternatives.
 
 ## Screenshots
 
-The task list:
-
-![Task List](Screenshots/tasks.png)
-
-Creating a task:
-
-![Task Creation](Screenshots/new_task.png)
+| Task List                           | Task Creation                              |
+| ![Task List](Screenshots/tasks.png) | ![Task Creation](Screenshots/new_task.png) |
