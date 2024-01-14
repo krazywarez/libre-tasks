@@ -121,7 +121,7 @@ struct ContentView: View {
                     }
                     .onDelete(perform: self.deleteTask)
                 }
-                .navigationBarTitle("Tasks")
+                .navigationBarTitle("LibreTasks")
                 .toolbar {
                     ToolbarItemGroup(placement: .navigationBarTrailing) {
                         EditButton()
