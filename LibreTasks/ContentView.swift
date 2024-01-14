@@ -97,10 +97,11 @@ struct ContentView: View {
                             (Text("[#") + Text(task.taskPriority) + Text("]"))
                         }
                         .swipeActions(edge: .leading) {
-                            Button(role: .destructive) {
-                                print("\(task.taskItem) is being deleted.")
+                            Button() {
+                                print("\(task.taskItem) is being edited.")
+                                // TODO: Add method to edit message in the DataStore
                             } label: {
-                                Label("Delete", systemImage: "trash")
+                                Label("Edit", systemImage: "pencil")
                             }
                         }
                         .swipeActions(edge: .trailing) {
@@ -111,11 +112,10 @@ struct ContentView: View {
                                 Label("Complete", systemImage: "checkmark")
                             }
                             .tint(.green)
-                            Button() {
-                                print("\(task.taskItem) is being edited.")
-                                // TODO: Add method to edit message in the DataStore
+                            Button(role: .destructive) {
+                                print("\(task.taskItem) is being deleted.")
                             } label: {
-                                Label("Edit", systemImage: "pencil")
+                                Label("Delete", systemImage: "trash")
                             }
                         }
                     }
